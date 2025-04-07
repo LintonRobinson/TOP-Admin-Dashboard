@@ -1,0 +1,418 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/* In Development */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+img { 
+    /* max-width: 100%; */
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+:root {
+    --ddt-blue: #2569BB;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* overflow: hidden;  */
+}
+
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+h1 {
+    font-size: 1.9rem;
+}
+
+
+/******************************************
+/* PAGE CONTENT CONTAINER STYLING
+/*******************************************/
+/* Main sections grid */
+.page-content-container {
+    display: grid;
+    grid-template-columns: 300px 4.5fr;
+    grid-template-rows: 1fr 4.5fr;
+    height: 100%;
+}
+
+/******************************************
+/* SIDEBAR STYLING
+/*******************************************/
+/* Sidebar styling, grid placement */
+aside {
+    background-color: var(--ddt-blue);
+    grid-row: 1/4;
+    padding: 25px;
+    color: white;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 30px;
+    align-items: start;
+
+    -webkit-box-shadow: 2px 0px 14px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 0px 14px -1px rgba(0,0,0,0.75);
+box-shadow: 2px 0px 14px -1px rgba(0,0,0,0.75);
+}
+
+
+
+/* Sidebar container styling */
+.side-bar-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 2nd Sidebar container styling */
+.side-bar-container:nth-child(2) {
+    padding: 0 20px 20px 20px;
+    position: relative;
+    
+}
+
+/* 2nd Sidebar bottom border */
+.side-bar-container:nth-child(2)::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    border-bottom: 1px solid rgba(255, 255, 255, 0.405);
+    width: 85%;
+}
+
+/* Sidebar icon text wrapper styling */
+.sidebar-icon-text-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 35px 1fr;
+    gap: 15px;
+    align-items: center;
+    width: 150px;
+    font-size: 1.2rem;
+}
+
+/* Sidebar top left wrapper styling */
+.sidebar-top-left-wrapper {
+    display: grid;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: solid 2px white;
+    padding-bottom: 15px;
+
+}
+
+/* Sidebar top logo styling */
+.side-bar-top-logo {
+    width: 160px !important;
+    display: block;
+    justify-self: center;
+    border-radius: 5px;
+}
+
+
+/* Sidebar images styling */
+.side-bar-container img {
+    width: 27px;
+}
+
+/* Sidebar image wrapper styling */
+.sidebar-image-wrapper {
+    width: 35px;
+}
+
+
+/******************************************
+/* HEADER STYLING
+/*******************************************/
+
+/* Header styling */
+header {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: repeat(2, 80px);
+    padding: 25px;
+    color: black;
+}
+
+
+/*  Search container styling */
+.search-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content repeat(1,minmax(200px,1fr));
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+    padding-right: 200px;
+}
+
+/* Top left search container image styling */
+.search-container img  {
+    width: 22px;
+}
+
+/* Search input styling */
+input {
+    width: 100%;
+    padding: 7px;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 20px;
+}
+
+/* Header top right styling */
+.header-top-right-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
+    gap: 20px;
+}
+
+/* Header top right search image styling */
+.header-top-right-wrapper img:nth-child(1) {
+    width: 35px;
+}
+
+/* Header top right user image styling */
+.user-profile-image {
+    width: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+/* Header top right text styling */
+.header-top-right-wrapper span {
+    font-weight: 800;
+}
+
+/* Header bottom left styling */
+.header-bottom-left-wrapper {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 25px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+/* Header bottom left image */
+.header-bottom-left-wrapper img {
+    height: 80px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+/* Header bottom left text styling */
+.header-bottom-left-wrapper span {
+    font-weight: 600;
+}
+
+/* Header bottom left span inside span styling */ 
+header-bottom-left-wrapper span span {
+    font-size: clamp(0.5rem,2vw,1.6rem);
+    font-weight: 800 !important;
+    
+}
+
+/* Header bottom right  styling */ 
+.header-bottom-right-wrapper {
+    display: grid;
+    grid-template-columns: max-content max-content;
+
+    align-items: center;
+    gap: 20px;
+    justify-self: end;
+}
+
+/* Header bottom right button styling */ 
+button {
+    color: white;
+    background-color: var(--ddt-blue);
+    font-family: 'Roboto';
+    font-size: 1rem;
+    padding: 15px 17px;
+    border: none;
+    border-radius: 20px;
+    transition: 500ms;
+    justify-self: end;
+}
+
+button:hover, .individual-staff-wrapper:hover {
+    -webkit-box-shadow: 0px 0px 21px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -5px var(--ddt-blue);
+    transition: 500ms;
+}
+
+/******************************************
+/* MAIN STYLING
+/*******************************************/
+/* Main styling */
+main {
+    background-color: #e2e8f0;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+/* Section heading styling */
+.section-heading {
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Section heading blue text styling */
+.section-heading span {
+    color: var(--ddt-blue);
+}
+
+/* Task cards wrapper styling */
+.task-cards-wrapper {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    gap: 15px;
+}
+
+/* Main tasks cards styling */
+.main-tasks-wrapper {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    border-left: var(--ddt-blue) solid 12px;
+    -webkit-box-shadow: -6px 0px 10px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px 0px 10px -8px rgba(0,0,0,0.75);
+    box-shadow: -6px 0px 10px -8px rgba(0,0,0,0.75);
+    display: grid;
+    grid-template-rows: repeat(3,min-content);
+    gap: 20px;
+}
+
+/* Task titles styling */
+.task-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: 3px solid var(--ddt-blue);
+    display: inline-block; 
+    padding-bottom: 7px;
+}
+
+/* Task icons wrapper styling */
+.task-icons-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    justify-content: end;
+}
+
+/* Task icons styling */
+.task-icons-wrapper img {
+    width: 25px;
+}
+
+
+
+/* Main right wrapper styling */
+.main-right-wrapper {
+    display: grid; 
+    gap: 15px;
+    height: 90%;
+}
+
+/* Announcements content wrapper styling */
+.announcements-content-wrapper, .staff-on-shift-content-wrapper {
+    background-color: white;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    -webkit-box-shadow: 4px 0px 10px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 0px 10px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 0px 10px -8px rgba(0,0,0,0.75); 
+}
+
+/* Announcements wrapper styling */
+.announcement-wrapper {
+    display: grid;
+    gap: 15px;
+}
+
+/* Announcements wrapper title styling */
+.announcement-wrapper span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: 3px solid var(--ddt-blue);
+    display: inline-block; 
+    padding-bottom: 7px;
+}
+
+/* Individual staff wrapper styling */
+.individual-staff-wrapper {
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    justify-content: center;
+    border: var(--ddt-blue) 2px solid ;
+    border-radius: 20px;
+    padding: 5px 0;
+    background-color: var(--ddt-blue);
+    color: white;
+    transition: 500ms;
+}
+
+/* Staff wrapper image styling */
+.individual-staff-wrapper img {
+    width: 40px;
+}
+
+/* Staff text text styling */
+.staff-text {
+    display: grid;
+    text-align: centerq;
+}
+
+/* Staff text title styling */
+.staff-text span {
+    font-weight: 700;
+}
